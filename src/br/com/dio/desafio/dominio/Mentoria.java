@@ -1,6 +1,7 @@
 package br.com.dio.desafio.dominio;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class Mentoria extends Conteudo{
 
@@ -24,10 +25,17 @@ public class Mentoria extends Conteudo{
 
     @Override
     public String toString() {
+
+        //alteração realizada por Júlia Ferreira
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        String dataFormatado = data.format(formatter);
+
         return "Mentoria{" +
-                "titulo='" + getTitulo() + '\'' +
-                ", descricao='" + getDescricao() + '\'' +
-                ", data=" + data +
+                "Título='" + getTitulo() + '\'' +
+                "Descrição='" + getDescricao() + '\'' +
+                "Data=" + dataFormatado +
                 '}';
+
+
     }
 }
